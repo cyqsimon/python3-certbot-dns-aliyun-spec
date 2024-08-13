@@ -4,7 +4,7 @@
 
 Name:           python3-%{_prj_name}
 Version:        2.0.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A certbot dns plugin to obtain certificates using aliyun
 
 License:        Apache-2.0
@@ -36,9 +36,12 @@ A certbot dns plugin to obtain certificates using aliyun.
 %license LICENSE.txt
 %doc README.md
 %{python3_sitelib}/%{_install_name}/
-%{python3_sitelib}/%{_install_name}*.dist-info/
+%{python3_sitelib}/%{_install_name}-%{version}-*.egg-info/
 
 %changelog
+* Tue Aug 13 2024 cyqsimon - 2.0.0-5
+- Fix installed files declaration
+
 * Tue Aug 13 2024 cyqsimon - 2.0.0-4
 - Disable tests due to API key requirement
 
