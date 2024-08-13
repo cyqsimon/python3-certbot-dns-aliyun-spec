@@ -4,7 +4,7 @@
 
 Name:           python3-%{_prj_name}
 Version:        2.0.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A certbot dns plugin to obtain certificates using aliyun
 
 License:        Apache-2.0
@@ -26,7 +26,8 @@ A certbot dns plugin to obtain certificates using aliyun.
 %py3_build
 
 %check
-%{__python3} -m pytest
+# tests are disabled because many require an API key
+#%{__python3} -m pytest
 
 %install
 %py3_install
@@ -38,6 +39,9 @@ A certbot dns plugin to obtain certificates using aliyun.
 %{python3_sitelib}/%{_install_name}*.dist-info/
 
 %changelog
+* Tue Aug 13 2024 cyqsimon - 2.0.0-4
+- Disable tests due to API key requirement
+
 * Tue Aug 13 2024 cyqsimon - 2.0.0-3
 - Use more stable RPM Python macros
   - New ones unavailable in EL8
